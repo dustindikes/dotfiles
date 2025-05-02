@@ -16,6 +16,10 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Auto complete
 "Plugin 'valloric/youcompleteme'
 
+" Language support
+Plugin 'StanAngeloff/php.vim'
+Plugin 'nelsyeung/twig.vim'
+
 " Other plugins
 Plugin 'kien/ctrlp.vim'
 Plugin 'itchyny/lightline.vim'
@@ -27,6 +31,9 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 au BufNewFile,BufRead *.ejs set filetype=html
+
+" Toggle NERDTree with CTRL-n
+map <C-n> :NERDTreeToggle<CR>
 
 " NERDTree git
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -159,7 +166,7 @@ augroup omni_complete
 	"Enable filetypes
 	autocmd FileType css,scss,less setlocal omnifunc=csscomplete#CompleteCSS
 	autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-	autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+	"autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 	autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 augroup END
 	
