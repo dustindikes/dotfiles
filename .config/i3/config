@@ -9,6 +9,8 @@ set $refresh_i3status killall -SIGUSR1 i3status
 font pango:monospace 8
 
 exec --no-startup-id feh --bg-scale ~/bg.jpg
+exec --no-startup-id xrandr --output eDP1 --scale .5
+exec_always picom -f
 
 for_window [class=".*"] border pixel 8
 
@@ -17,7 +19,7 @@ client.focused_inactive #282c34 #073642 #eee8d5 #6c71c4
 client.unfocused #282c34 #282c34 #93a1a1 #586e75
 client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 
-border_radius 2
+#border_radius 2
 
 gaps inner 10
 
@@ -185,3 +187,5 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
+exec --no-startup-id xrandr --output eDP1 --mode 1400x900 &
